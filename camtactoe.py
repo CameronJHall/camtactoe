@@ -1,6 +1,8 @@
+"""CamTacToe - play tic tac toe against the greats"""
+import re
 import time
 import random
-import re
+import emoji
 
 class Game(object):
     """Base game class
@@ -34,9 +36,9 @@ class CamTacToe(Game):
             state = self.state
         if self.game_started:
             print('\r\033[8A')
-        print(' {state[0]} | {state[1]} | {state[2]} \n___|___|___\n'
-              ' {state[3]} | {state[4]} | {state[5]} \n___|___|___\n'
-              ' {state[6]} | {state[7]} | {state[8]} \n   |   |   \n'.format(state=state))
+        print(emoji.emojize(' {state[0]} | {state[1]} | {state[2]} \n___|___|___\n'
+                            ' {state[3]} | {state[4]} | {state[5]} \n___|___|___\n'
+                            ' {state[6]} | {state[7]} | {state[8]} \n   |   |   \n'.format(state=state)))
 
 
     def __make_move(self, user):
@@ -231,5 +233,6 @@ if __name__ == '__main__':
     else:
         print('It\'s over player, I have the high ground')
 
+    MYGAME.player_char = ':fire:'
     MYGAME.play()
     MYGAME.print_history()
