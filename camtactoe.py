@@ -234,5 +234,8 @@ if __name__ == '__main__':
         print('It\'s over player, I have the high ground')
 
     MYGAME.player_char = ':fire:'
+    MYGAME.opponent_char = ':hundred_points:'
     MYGAME.play()
-    MYGAME.print_history()
+    REPLAY = input('Ready for that instant replay? ')
+    if re.match(r'[y|sure|aff|of course]', REPLAY):
+        MYGAME.print_history()
